@@ -1,5 +1,5 @@
+cmake_minimum_required(VERSION 3.2 FATAL_ERROR)
 project(Transformer-DyNet)
-cmake_minimum_required(VERSION 2.8 FATAL_ERROR)
 
 set(CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/dynet/cmake)
 
