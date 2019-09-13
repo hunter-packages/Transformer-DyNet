@@ -203,7 +203,7 @@ set(dynet_gpu_SRCS
     gpu-ops.cu)
 
 file(GLOB TEST_SRCS RELATIVE ${CMAKE_CURRENT_SOURCE_DIR} tests/*.cc)
-if (NOT MSVC)
+if (NOT MSVC AND FALSE)
   set(BUILD_SHARED_LIBS ON)
 endif()
 
