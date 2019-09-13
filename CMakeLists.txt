@@ -176,6 +176,12 @@ if (WITH_CUDA_BACKEND)
   endif()
 endif()
 
+if(HUNTER_ENABLED)
+  hunter_add_package(Eigen)
+  find_package(Eigen3 CONFIG REQUIRED)
+  list(APPEND LIBS Eigen3::Eigen)
+else()
+
 # look for Eigen
 if (DEFINED ENV{EIGEN3_INCLUDE_DIR} AND NOT DEFINED EIGEN3_INCLUDE_DIR) # use env variable if not set
   set(EIGEN3_INCLUDE_DIR $ENV{EIGEN3_INCLUDE_DIR})
@@ -185,6 +191,8 @@ set(EIGEN3_INCLUDE_DIR ${EIGEN3_INCLUDE_DIR} CACHE STRING "" FORCE)
 message("-- Eigen dir is " ${EIGEN3_INCLUDE_DIR})
 find_package(Eigen3 REQUIRED)
 include_directories(${EIGEN3_INCLUDE_DIR})
+
+endif()
 
 find_package(Threads REQUIRED)
 set(LIBS ${LIBS} Threads::Threads)
