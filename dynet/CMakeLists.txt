@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.2 FATAL_ERROR)
 project(dynet)
 
-set(CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmake)
+list(APPEND CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmake)
 
 # DYNET uses Eigen which exploits modern CPU architectures. To get the
 # best possible performance, the following are recommended:

@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.2 FATAL_ERROR)
 project(Transformer-DyNet)
 
-set(CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/dynet/cmake)
+list(APPEND CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/dynet/cmake)
 
 # DYNET uses Eigen which exploits modern CPU architectures. To get the
 # best possible performance, the following are recommended:
