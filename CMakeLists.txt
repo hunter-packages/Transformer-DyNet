@@ -186,8 +186,8 @@ message("-- Eigen dir is " ${EIGEN3_INCLUDE_DIR})
 find_package(Eigen3 REQUIRED)
 include_directories(${EIGEN3_INCLUDE_DIR})
 
-FIND_PACKAGE(Threads REQUIRED)
-set(LIBS ${LIBS} ${CMAKE_THREAD_LIBS_INIT})
+find_package(Threads REQUIRED)
+set(LIBS ${LIBS} Threads::Threads)
 
 configure_file(${CMAKE_CURRENT_SOURCE_DIR}/dynet/config.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config.h)
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
