@@ -121,7 +121,7 @@ function(find_cudnn)
 endfunction()
 
 # look for Boost
-if(ENABLE_BOOST)
+if(ENABLE_BOOST AND FALSE)
   message("-- Enabling Boost")
   if(DEFINED ENV{BOOST_ROOT})
     set(Boost_NO_SYSTEM_PATHS ON)
@@ -139,6 +139,12 @@ if(ENABLE_BOOST)
   else()
     set(LIBS ${LIBS} ${Boost_LIBRARIES})
   endif()
+endif()
+
+if(ENABLE_BOOST)
+  hunter_add_package(Boost COMPONENTS program_options regex serialization)
+  find_package(Boost CONFIG COMPONENTS program_options regex serialization REQUIRED)
+  set(LIBS ${LIBS} Boost::program_options Boost::regex Boost::serialization)
 endif()
 
 if(BACKEND)

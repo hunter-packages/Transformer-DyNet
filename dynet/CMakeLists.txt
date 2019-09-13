@@ -115,7 +115,7 @@ function(find_cudnn)
 endfunction()
 
 # look for Boost
-if(ENABLE_BOOST)
+if(ENABLE_BOOST AND FALSE)
   message("-- Enabling Boost")
   if(DEFINED ENV{BOOST_ROOT})
     set(Boost_NO_SYSTEM_PATHS ON)
