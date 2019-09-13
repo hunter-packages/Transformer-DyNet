@@ -8,7 +8,7 @@
 #include "dynet/cuda.h"
 #include "dynet/globals.h"
 #include "dynet/device-structs.h"
-#include <unsupported/Eigen/CXX11/Tensor>
+#include <eigen3/unsupported/Eigen/CXX11/Tensor>
 
 namespace Eigen {
   struct DefaultDevice;
